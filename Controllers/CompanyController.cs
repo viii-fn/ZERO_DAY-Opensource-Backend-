@@ -5,6 +5,6 @@ public class CompanyController : ControllerBase
 	[HttpGet]
 	public IEnumerable Get()
 	{
-		return new string[] { "Vidpixar", "SerzaMoon", "Paramedy" };
+		return new string[] { "Vidpixar", "SerzaMoon", "Zero Day", "Paramedy" };
 	}
 }
