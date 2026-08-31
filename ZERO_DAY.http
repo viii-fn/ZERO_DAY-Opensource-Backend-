@@ -1,0 +1,6 @@
+@ZERO_DAY_HostAddress = http://localhost:5022
+
+GET {{ZERO_DAY_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
