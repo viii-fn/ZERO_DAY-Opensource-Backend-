@@ -7,7 +7,7 @@ namespace ZERO_DAY.Controllers;
 public class CompanyController : ControllerBase
 {
 	[HttpGet]
-	public IEnumerable<string> Get()
+	public AcrionResult<string> GetCompany()
 	{
 		return new string[] { "Vidpixar", "SerzaMoon", "Zero Day", "Paramedy" };
 	}
