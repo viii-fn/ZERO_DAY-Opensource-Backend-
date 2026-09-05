@@ -38,4 +38,15 @@ public class UsersController : ControllerBase
 	{
 		return Ok(UserList);
 	}
+
+	[HttpGet("{id}")]
+	public IActionResult GetById(int id)
+	{
+		var singleUser = UserList.FirstOrDefault(x => x.Id == id);
+		if (singleUser == null)
+		{
+			return NotFound();
+		}
+		return Ok(singleUser);
+	}
 }
