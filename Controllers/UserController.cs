@@ -53,10 +53,6 @@ public class UsersController : ControllerBase
 	[HttpPost("new")]
 	public IActionResult Post(UserModel model)
 	{
-		if (!ModelState.isValid)
-		{
-			return BadRequest();
-		}
 		model.Id = UserList.Max(x => x.Id + 1);
 		UserList.Add(model);
 
