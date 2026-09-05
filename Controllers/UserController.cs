@@ -14,7 +14,7 @@ public class UserController : ControllerBase
 		{
 			new UserModel() { },
 			new UserModel() { }
-		}
+		};
 		return Ok(userList);
 	}
 }
