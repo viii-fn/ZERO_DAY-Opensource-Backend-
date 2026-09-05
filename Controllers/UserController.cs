@@ -50,7 +50,7 @@ public class UsersController : ControllerBase
 		return Ok(singleUser);
 	}
 
-	[HttpPost]
+	[HttpPost("new")]
 	public IActionResult Post(UserModel model)
 	{
 		if (!ModelState.isValid)
