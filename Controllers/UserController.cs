@@ -7,18 +7,31 @@ namespace ZERO_DAY.Controllers;
 
 public class UsersController : ControllerBase
 {
+	List<UserModel> userList = new List<UserModel>()
+	{
+		new UserModel()
+		{
+			Name = "VIII",
+			Key = "2324",
+			Id = 1
+		},
+		new UserModel()
+		{
+			Name = "XDR",
+			Key = "2324",
+			Id = 2
+		},
+		new UserModel()
+		{
+			Name = "FnFlume",
+			Key = "2324",
+			Id = 3
+		}
+	};
+	
 	[HttpGet]
 	public IActionResult GetAll()
 	{
-		List<UserModel> userList = new List<UserModel>()
-		{
-			new UserModel()
-			{
-				Name = "VIII",
-				Key = "2324",
-				Id = 1
-			}
-		};
 		return Ok(userList);
 	}
 
