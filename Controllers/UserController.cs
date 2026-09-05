@@ -5,20 +5,22 @@ namespace ZERO_DAY.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
 	[HttpGet]
 	public IActionResult GetAll()
 	{
-		var userList = new List<UserModel>()
+		List<UserModel> userList = new List<UserModel>()
 		{
 			new UserModel()
 			{
-				Username = "VIII",
-				Password = "2324#Dream",
-				Token = 232413579
+				Name = "VIII",
+				Key = "2324#Dream",
+				Id = 232413579
 			}
 		};
 		return Ok(userList);
 	}
+
+	// [HttpGet("[token]")]
 }
