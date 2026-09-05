@@ -10,7 +10,8 @@ public class UserController : ControllerBase
 	[HttpGet]
 	public IActionResult GetAll()
 	{
-		var userList = new List<UserModel>() {
+		var userList = new List<UserModel>()
+		{
 			new UserModel() { },
 			new UserModel() { }
 		}
