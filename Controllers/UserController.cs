@@ -12,8 +12,12 @@ public class UserController : ControllerBase
 	{
 		var userList = new List<UserModel>()
 		{
-			new UserModel() { },
-			new UserModel() { }
+			new UserModel()
+			{
+				Username = "VIII",
+				Password = "2324#Dream",
+				Token = 232413579
+			}
 		};
 		return Ok(userList);
 	}
