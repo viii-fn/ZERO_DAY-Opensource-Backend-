@@ -49,4 +49,17 @@ public class UsersController : ControllerBase
 		}
 		return Ok(singleUser);
 	}
+
+	[HttpPost]
+	public IActionResult Post(UserModel model)
+	{
+		if (!ModelState.isValid)
+		{
+			return BadRequest();
+		}
+		model.Id = UserList.Max(x => x.Id + 1);
+		UserList.Add(model);
+
+		return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
+	}
 }
