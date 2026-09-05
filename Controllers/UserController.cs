@@ -10,7 +10,7 @@ public class UsersController : ControllerBase
 	private List<UserModel> UserList;
 	public UsersController()
 	{
-		List<UserModel> UserList = new List<UserModel>()
+		UserList = new List<UserModel>()
 		{
 			new UserModel()
 			{
@@ -38,6 +38,4 @@ public class UsersController : ControllerBase
 	{
 		return Ok(UserList);
 	}
-
-	// [HttpGet("[token]")]
 }
