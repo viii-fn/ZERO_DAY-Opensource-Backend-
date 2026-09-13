@@ -49,6 +49,11 @@ public class UsersController : ControllerBase
 	[HttpHead("{id}")]
 	public IActionResult CheckIfExists(int id)
 	{
-		
+		var userToReturn = UserList.FirstOrDefault(x => x.Id == id);
+		if (userToReturn == null)
+		{
+			return NotFound();
+		}
+		return Ok(userToReturn);
 	}
 }
