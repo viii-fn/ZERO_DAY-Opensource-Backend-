@@ -10,25 +10,12 @@ public class UsersController : ControllerBase
 	private List<UserModel> UserList;
 	public UsersController()
 	{
-		UserList = new List<UserModel>()
-		{
+		UserList = new List<UserModel>() {
 			new UserModel()
 			{
-				Name = "VIII",
-				Key = "2324",
+				Name = "viii_fn",
+				Key = "jojoXR2324",
 				Id = 1
-			},
-			new UserModel()
-			{
-				Name = "XDR",
-				Key = "2324",
-				Id = 2
-			},
-			new UserModel()
-			{
-				Name = "FnFlume",
-				Key = "2324",
-				Id = 3
 			}
 		};
 	}
@@ -57,5 +44,11 @@ public class UsersController : ControllerBase
 		UserList.Add(model);
 
 		return CreatedAtAction(nameof(GetById), new { id = model.Id }, model);
+	}
+
+	[HttpHead("{id}")]
+	public IActionResult CheckIfExists(int id)
+	{
+		
 	}
 }
