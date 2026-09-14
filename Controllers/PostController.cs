@@ -15,7 +15,7 @@ public class PostController : ControllerBase
 			{
 				Post = "Welcome to ZERO_DAY"
 			}
-		}
+		};
 	}
 
 	[HttpGet]
@@ -40,7 +40,7 @@ public class PostController : ControllerBase
 	public IActionResult Post(PostModel newPost)
 	{
 		newPost.id = Posts.Max(x => x.Id + 1);
-		Posts.Add(newPost)
+		Posts.Add(newPost);
 
 		return CreatedAtAction(nameof(GetById), new { id = newPost.id }, newPost);
 	}
