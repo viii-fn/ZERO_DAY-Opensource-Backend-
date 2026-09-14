@@ -56,4 +56,17 @@ public class UsersController : ControllerBase
 		}
 		return Ok(userToReturn);
 	}
+
+	[HttpPut("{id}")]
+	public IActionResult Update(int id, UserModel model)
+	{
+		var userFromDb = UserList.FirstOrDefault(x => x.Id == id);
+	if (userFromDb == null)
+	{
+		return NotFound();
+	}
+		TryUpdateModelAsync(userFromDb);
+		//update in the database
+		return Ok(userFromDb);
+	}
 }
