@@ -11,8 +11,9 @@ public class PostController : ControllerBase
 	{
 		Posts = new List<PostModel>()
 		{
-			new UserModel()
+			new PostModel()
 			{
+				Id = 1,
 				Post = "Welcome to ZERO_DAY"
 			}
 		};
