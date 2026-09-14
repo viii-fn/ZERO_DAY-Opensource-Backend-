@@ -40,9 +40,9 @@ public class PostController : ControllerBase
 	[HttpPost]
 	public IActionResult Post(PostModel newPost)
 	{
-		newPost.id = Posts.Max(x => x.Id + 1);
+		newPost.Id = Posts.Max(x => x.Id + 1);
 		Posts.Add(newPost);
 
-		return CreatedAtAction(nameof(GetById), new { id = newPost.id }, newPost);
+		return CreatedAtAction(nameof(GetById), new { id = newPost.Id }, newPost);
 	}
 }
