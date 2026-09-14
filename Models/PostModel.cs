@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 public class PostModel
 {
+	int Id { get; set; }
 	[Required]
-	[StringLength(1000, ErrorMessage = "Post exceeds the 400 character limit.")]
-	public string? Post { get; set; }
-	[EmailAddress]
-	public string? Email { get; set; }
+	[StringMaxLength(1000, ErrorMessage = "Post cannot be more than a thousand characters.")]
+	[StringMinLength(1, ErrorMessage = "Post to small")]
+	public string Post { get; set; }
 }

@@ -37,7 +37,7 @@ public class UsersController : ControllerBase
 		return Ok(singleUser);
 	}
 
-	[HttpPost("new")]
+	[HttpPost]
 	public IActionResult Post(UserModel model)
 	{
 		model.Id = UserList.Max(x => x.Id + 1);
