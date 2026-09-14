@@ -69,4 +69,17 @@ public class UsersController : ControllerBase
 		//update in the database
 		return Ok(userFromDb);
 	}
+
+	[HttpDelete("{id}")]
+	public IActionResult Delete(int id)
+	{
+		var userFromDb = UserList.FirstOrDefault(x => x.Id == id);
+		if (userFromDb == null)
+		{
+			return NotFound();
+		}
+
+		UserList.Remove(userFromDb);
+		return NoContent();
+	}
 }
